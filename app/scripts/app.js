@@ -38,4 +38,24 @@
             });
       });
 
+
+    var popoverTemplate = '<div class="popover" role="tooltip">\
+                              <div class="arrow"></div>\
+                              <h3 class="title">Войти как администратор</h3>\
+                              <div class="content">\
+                                <form id="adminSignIn">\
+                                  <div class="form-group">\
+                                    <label for="adminLogin">Login</label>\
+                                    <input type="text" class="form-control" id="adminLogin" placeholder="Login">\
+                                  </div>\
+                                  <div class="form-group">\
+                                    <label for="adminPass">Password</label>\
+                                    <input type="password" class="form-control" id="adminPass" placeholder="Password">\
+                                  </div>\
+                                </form>\
+                              </div>\
+                              </div>\
+                            </div>';
+
+    $('[data-toggle="popover"]').popover({template: popoverTemplate});
 })();

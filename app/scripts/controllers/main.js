@@ -9,13 +9,14 @@
  */
 (function() {
   angular.module('feedbackFormApp')
-      .controller('MainCtrl', function($scope, $location) {
+      .controller('MainCtrl', function($scope, $location, $rootScope) {
         $scope.menuClass = function(page) {
           var current = $location.path().substring(1);
           return page === current ? 'active' : '';
         };
 
-        $scope.developerName = 'Katherina Utlik';
+        $scope.developerName = 'Bublik Studio';
+        $rootScope.header = 'Bublik Studio CMS';
 
 
 

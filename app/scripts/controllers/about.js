@@ -10,6 +10,6 @@
 (function() {
   angular.module('feedbackFormApp')
       .controller('AboutCtrl', function($scope, $rootScope) {
-        $rootScope.header = 'About Us';
+//        $rootScope.header = 'About Us';
       });
 })();

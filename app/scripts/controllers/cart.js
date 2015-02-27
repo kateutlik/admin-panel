@@ -10,7 +10,7 @@
 (function() {
   angular.module('feedbackFormApp')
       .controller('CartCtrl', function($scope, $rootScope) {
-        $rootScope.header = 'Your order';
+//        $rootScope.header = 'Your order';
 
         $scope.removeFromCart = function($index){
           $scope.orderList[$index] = 0;

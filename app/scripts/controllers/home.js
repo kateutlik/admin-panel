@@ -10,6 +10,6 @@
 (function() {
   angular.module('feedbackFormApp')
       .controller('HomeCtrl', function($scope, $rootScope) {
-        $rootScope.header = 'Home page';
+//        $rootScope.header = 'Bublik Studio CMS';
       });
 })();
