@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h3 class="modal-title">Добавление стола</h3>
+</div>
+<div class="modal-body">
+    <form>
+        <label for="tableName">Введите название стола</label>
+        <input type="text" class="form-control" id="tableName" ng-model="table.name" value="{{table.name}}">
+        <label for="tableForm">Выберите форму стола</label>
+        <select class="form-control" id="tableForm" ng-model="table.form" value="{{table.form}}">
+          <option ng-repeat="option in formOptions" value={{option.value}}>{{option.label}}</option>
+        </select>
+        <label for="chairsCount">Введите количество стульев</label>
+        <input type="number" class="form-control" id="chairsCount" ng-model="table.chairsCount" name="chairsCount" value="{{table.chairsCount}}" integer >
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">Сохранить</button>
+    <button class="btn btn-warning" ng-click="cancel()">Отмена</button>
+</div>

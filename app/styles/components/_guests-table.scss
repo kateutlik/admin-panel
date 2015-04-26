@@ -1,0 +1,16 @@
+.guests-table {
+	thead {
+		th {
+			cursor: pointer;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	.results-tr {
+	  	border-top: 2px solid #ddd;
+	}
+}

@@ -1,0 +1,11 @@
+<h1 class="page-header">Информация
+	<button type="button" class="btn btn-success">Сохранить</button>
+</h1>
+<form>
+	<div class="form-group" ng-repeat="title in dataTitles">
+		<label for="infoId{{$index}}">{{title}}</label>
+		<!-- <input type="text" class="form-control" id="infoId{{$index}}" value="{{dataValues[$index]}}" /> -->
+		<textarea class="form-control" id="infoId{{$index}}">{{dataValues[$index]}}</textarea>
+	</div>
+	<button class="btn btn-success">Сохранить</button>
+</form>

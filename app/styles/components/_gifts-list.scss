@@ -1,0 +1,26 @@
+.gifts-list {
+	.thumbnail {
+
+		&.add-gift {
+			font-size: 100px;
+			cursor: pointer;
+			text-align: center;
+			line-height: 484px;
+
+			&:hover {
+				opacity: 0.8;
+			}
+		}
+
+		img {
+			clear: both;
+			height: 245px;
+		}
+
+
+		.remove {
+			float: right;
+		}
+	}
+	
+}

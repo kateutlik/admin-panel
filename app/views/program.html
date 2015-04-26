@@ -1,0 +1,20 @@
+<h1 class="page-header">Программа мероприятия
+	<button type="button" class="btn btn-primary" ng-click="ifEdit=!ifEdit" ng-hide="ifEdit">Изменить программу</button>
+	<button type="button" class="btn btn-success" ng-click="ifEdit=!ifEdit" ng-show="ifEdit">Сохранить</button>
+</h1>
+<form class="editProgramForm" ng-show="ifEdit">
+	<label class="titleLabel">Событие:</label>
+	<label class="timeLabel">Время:</label>
+	<div class="inputs-line" ng-repeat="item in programList">
+		<input type="text" class="form-control title" ng-model="item.title" value="{{item.title}}" />
+		<input type="time" class="form-control time" ng-model="item.time" value="{{item.time}}">
+		<div class="glyphicon glyphicon-remove remove" ng-click="removeEvent($index)" tooltip="Удалить" tooltip-placement="right"></div>
+	</div> 
+	<button type="button" class="btn btn-primary" ng-click="addEvent()">Добавить событие</button>
+	<button type="button" class="btn btn-success" ng-click="updateEventsList(); ifEdit=!ifEdit">Сохранить</button>
+</form>
+<ul class="eventProgram">
+	<li ng-repeat="item in programList | orderBy:'time'"><p>{{item.title}}<br />{{item.time | date: "HH:mm"}}</p></li>
+</ul>
+
+

@@ -1,0 +1,41 @@
+.seating-places {
+
+	.col {
+		float: none;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.panel {
+		.panel-title { 
+			line-height: 34px;
+
+			.btn-edit {
+				float: right;
+				padding: 5px 12px;
+			}
+		}
+	}
+
+	.list-group {
+		margin-bottom: 0;
+		list-style: none;
+
+		.badge {
+			margin: 0 8px 0 0;
+			vertical-align: 1px;
+		}
+
+		.remove {
+			font-size: 12px;
+			vertical-align: 1px;
+		}
+
+		input {
+			display: inline-block;
+			width: 58%;
+			margin: 0;
+		}
+
+	}
+}

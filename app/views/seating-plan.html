@@ -1,0 +1,35 @@
+<h1 class="page-header" ng-controller="ModalTableCtrl as modal">План рассадки
+	<button type="button" class="btn btn-primary" ng-click="editTable(-1)">Добавить стол</button>
+</h1>
+<div class="seating-places row">
+	<div class="col-md-4 col" ng-class="{{table.form}}" ng-repeat="table in tables">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					{{table.name}}
+					<button type="button" class="btn btn-info btn-edit" ng-click="editTable($index)">Редактировать</button>
+					<div class="glyphicon glyphicon-remove remove" ng-click="removeTable($index)" tooltip="Удалить" tooltip-placement="right"></div>
+				</h3>
+			</div>
+			<div class="panel-body">
+				<ul class="list-group">
+					<li ng-repeat="n in [] | range:table.chairsCount">
+						<div ng-hide="table.isEditGuest[$index]">
+							<span class="badge">{{$index + 1}}</span>
+							<span>{{table.guests[$index]}}</span>
+							<div ng-if="table.guests[$index]" class="glyphicon glyphicon-pencil edit" ng-click="editGuest(table, $index)" tooltip="Редактировать" tooltip-placement="right"></div>
+							<div ng-if="table.guests[$index]" class="glyphicon glyphicon-remove remove" ng-click="removeGuest(table, $index)" tooltip="Удалить" tooltip-placement="right"></div>
+							<div ng-if="!table.guests[$index]" class="glyphicon glyphicon-plus add" ng-click="editGuest(table, $index)" tooltip="Добавить" tooltip-placement="right"></div>
+						</div> 
+						<div ng-show="table.isEditGuest[$index]">
+							<span class="badge">{{$index + 1}}</span>
+							<input type="text" ng-model="table.guests[$index]" typeahead="guest for guest in guests | filter:$viewValue | limitTo:8" class="form-control" value="table.guests[$index]">
+							<button class="btn btn-success" ng-click="saveGuest(table, $index)">Сохранить</button>
+						</div>
+					</li>
+				</ul>
+		        
+			</div>
+		</div>
+	</div>
+</div>
