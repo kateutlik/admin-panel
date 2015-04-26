@@ -8,7 +8,7 @@
  * Controller of the feedbackFormApp
  */
 (function() {
-  angular.module('feedbackFormApp')
+  angular.module('adminPanelBublik')
       .controller('HomeCtrl', function($scope, $rootScope) {
 //        $rootScope.header = 'Bublik Studio CMS';
       });

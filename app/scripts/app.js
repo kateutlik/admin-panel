@@ -11,51 +11,51 @@
 (function() {
 
   angular
-      .module('feedbackFormApp', [
+      .module('adminPanelBublik', [
         'ngAnimate',
         'ngCookies',
         'ngResource',
         'ngRoute',
         'ngSanitize',
-        'ngTouch'
+        'ngTouch',
+        'ui.bootstrap'
       ])
       .config(function($routeProvider) {
         $routeProvider
-            .when('/home', {
-              templateUrl: 'views/main.html',
+            .when('/', {
+              templateUrl: 'views/home.html',
               controller: 'HomeCtrl'
             })
-            .when('/about', {
-              templateUrl: 'views/about.html',
-              controller: 'AboutCtrl'
+            .when('/inform', {
+              templateUrl: 'views/inform.html',
+              controller: 'InformCtrl'
             })
-            .when('/cart', {
-              templateUrl: 'views/cart.html',
-              controller: 'CartCtrl'
+            .when('/program', {
+              templateUrl: 'views/program.html',
+              controller: 'ProgramCtrl'
+            })
+            .when('/guests-list', {
+              templateUrl: 'views/guests-list.html',
+              controller: 'GuestsCtrl'
+            })
+            .when('/gifts', {
+              templateUrl: 'views/gifts.html',
+              controller: 'GiftsCtrl'
+            })
+            .when('/seating-plan', {
+              templateUrl: 'views/seating-plan.html',
+              controller: 'SeatingPlanCtrl'
+            })
+            .when('/mailing', {
+              templateUrl: 'views/mailing.html',
+              controller: 'MailingCtrl'
             })
             .otherwise({
-              redirectTo: '/home'
+              templateUrl: 'views/404.html',
+              controller: 'NotFoundCtrl'
             });
       });
 
 
-    var popoverTemplate = '<div class="popover" role="tooltip">\
-                              <div class="arrow"></div>\
-                              <h3 class="title">Войти как администратор</h3>\
-                              <div class="content">\
-                                <form id="adminSignIn">\
-                                  <div class="form-group">\
-                                    <label for="adminLogin">Login</label>\
-                                    <input type="text" class="form-control" id="adminLogin" placeholder="Login">\
-                                  </div>\
-                                  <div class="form-group">\
-                                    <label for="adminPass">Password</label>\
-                                    <input type="password" class="form-control" id="adminPass" placeholder="Password">\
-                                  </div>\
-                                </form>\
-                              </div>\
-                              </div>\
-                            </div>';
-
-    $('[data-toggle="popover"]').popover({template: popoverTemplate});
+    
 })();

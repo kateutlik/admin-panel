@@ -1,7 +1,0 @@
-<ul class="list-group">
-  <li class="list-group-item" ng-repeat="product in products" ng-if="orderList[$index] !== 0">
-      <span class="badge">{{orderList[$index]}}</span>
-      {{product.title}}
-    <span class="glyphicon glyphicon-remove" ng-click="removeFromCart($index)"></span>
-  </li>
-</ul>

@@ -8,14 +8,14 @@
  * Controller of the feedbackFormApp
  */
 (function() {
-  angular.module('feedbackFormApp')
+  angular.module('adminPanelBublik')
       .controller('MainCtrl', function($scope, $location, $rootScope) {
         $scope.menuClass = function(page) {
           var current = $location.path().substring(1);
           return page === current ? 'active' : '';
         };
 
-        $scope.developerName = 'Bublik Studio';
+        $rootScope.developerName = 'Bublik Studio';
         $rootScope.header = 'Bublik Studio CMS';
 
 

@@ -12,45 +12,38 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="scripts/plugins/cleditor1_4_5/jquery.cleditor.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="feedbackFormApp">
+  <body ng-app="adminPanelBublik" ng-controller="MainCtrl as main">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" top-nav></nav>
 
-    <!-- Add your site or application content here -->
-    <div class="container main-wrapper" ng-controller="MainCtrl as main">
-      <div class="header">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#/home" ng-bind="header"></a>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul side-nav class="nav nav-sidebar"></ul>
+            <div class="contacts-wrapper col-sm-3 col-md-2">
+                <p>Наши контакты:</p>
+                <ul class="contacts">
+                    <li><a href="tel:+375293479441" class="fa fa-phone fa-2x"></a></li>
+                    <li><a href="mailto:bublik.support@gmail.com" class="fa fa-envelope fa-2x"></a></li>
+                    <li><a href="#" class="fa fa-globe fa-2x" target="_blank"></a></li>
+                    <br />
+                    <li><a href="https://vk.com/bublik.minsk" class="fa fa-vk fa-2x" target="_blank"></a></li>
+                    <li><a href="#" class="fa fa-facebook-official fa-2x" target="_blank"></a></li>
+                    <li><a href="#" class="fa fa-instagram fa-2x" target="_blank"></a></li>
+                    <li><a href="#" class="fa fa-skype fa-2x"></a></li>
+                </ul>
             </div>
-            <div id="navbar" class="collapse navbar-collapse">
-              <button type="button" class="btn btn-info navbar-btn navbar-right" data-container="body" data-toggle="popover" data-placement="bottom"
-                      data-content="content">
-                Администратор
-              </button>
-            </div><!--/.nav-collapse -->
-          </div>
-
-        </nav>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-view>
+        </div>
       </div>
-
-      <div class="content" ng-view>
-      </div>
-    </div>
-
-    <div class="footer container">
-      <p>developed by <a href="https://www.facebook.com/katherina.utlik">{{developerName}}</a></p>
-    </div>
+    </div> 
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -70,45 +63,49 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
+    
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/button.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/highcharts-release/highcharts.js"></script>
+    <script src="bower_components/highcharts-release/highcharts-more.js"></script>
+    <script src="bower_components/highcharts-release/modules/exporting.js"></script>
     <!-- endbower -->
+    <script src="scripts/plugins/cleditor1_4_5/jquery.cleditor.min.js"></script>
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
 
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/home.js"></script>
-        <script src="scripts/controllers/feedback-form.js"></script>
-        <script src="scripts/controllers/products.js"></script>
-        <script src="scripts/controllers/cart.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/home.js"></script>
+    <script src="scripts/controllers/inform.js"></script>
+    <script src="scripts/controllers/program.js"></script>
+    <script src="scripts/controllers/guests.js"></script>
+    <script src="scripts/controllers/not-found.js"></script>
+    <script src="scripts/controllers/gifts.js"></script>
+    <script src="scripts/controllers/seating-plan.js"></script>
+    <script src="scripts/controllers/modal.js"></script>
+    <script src="scripts/controllers/mailing.js"></script>
 
-        <script src="scripts/directives/feedback-form.js"></script>
-        <script src="scripts/directives/about-text.js"></script>
-        <script src="scripts/directives/products-list.js"></script>
-        <!-- endbuild -->
-</body>
+    <script src="scripts/directives/top-nav.js"></script>
+    <script src="scripts/directives/side-nav.js"></script>
+    <script src="scripts/directives/guests-chart.js"></script>
+    <script src="scripts/directives/autocomplete.js"></script>
+    <script src="scripts/directives/cl-editor.js"></script>
+
+    <script src="scripts/filters/bool-to-word.js"></script>
+    <script src="scripts/filters/range.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>
